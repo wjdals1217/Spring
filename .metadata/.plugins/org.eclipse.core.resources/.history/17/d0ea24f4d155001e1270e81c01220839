@@ -1,0 +1,14 @@
+package sub2;
+
+/*
+ * 날짜 : 2023/09/18
+ * 이름 : 최정민
+ * 내용 : 스프링 컨테이너 실습
+ */
+public class SpringContainerTest {
+	public static void main(String[] args) {
+		
+		
+		
+	}
+}

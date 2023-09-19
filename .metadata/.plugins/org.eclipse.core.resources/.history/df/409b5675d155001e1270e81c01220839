@@ -1,0 +1,7 @@
+package sub2;
+
+public class HDD {
+	public void show() {
+		System.out.println("HDD : WD 3TB");
+	}
+}

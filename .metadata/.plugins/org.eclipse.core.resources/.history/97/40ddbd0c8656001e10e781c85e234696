@@ -1,0 +1,11 @@
+package sub1;
+
+public class TargetProxy implements Target{
+	
+	private Target target;
+	@Override
+	public void doBusiness() {
+		
+		
+	}
+}

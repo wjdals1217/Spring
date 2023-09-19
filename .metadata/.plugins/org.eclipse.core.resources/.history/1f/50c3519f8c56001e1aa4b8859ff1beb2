@@ -1,0 +1,26 @@
+package sub2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("service1")
+public class Service {
+	
+	@Autowired
+	private LogAdvice advice;
+	
+	public void insert() {
+		advice.beforeLog();
+		System.out.println("Core concern - insert...");
+		advice.afterLog();
+	}
+	public void select() {
+		System.out.println("Core concern - select...");
+	}
+	public void update() {
+		System.out.println("Core concern - update...");
+	}
+	public void delete() {
+		System.out.println("Core concern - delete...");
+	}
+}

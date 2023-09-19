@@ -1,0 +1,18 @@
+package sub1;
+
+public class LgTV {
+	
+	public void powerOn() {
+		System.out.println("LgTv powerOn...");
+	}
+
+	public void powerOff() {
+		System.out.println("LgTv powerOff...");
+	}
+	
+	public void soundUp() {
+	}
+	
+	public void soundDown() {
+	}
+}

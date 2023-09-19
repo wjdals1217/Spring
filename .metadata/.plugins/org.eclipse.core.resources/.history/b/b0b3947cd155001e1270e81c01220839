@@ -1,0 +1,7 @@
+package sub2;
+
+public class RAM {
+	public void show() {
+		System.out.println("RAM : SAMSUNG DDR4 16GB");
+	}
+}
