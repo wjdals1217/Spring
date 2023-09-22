@@ -62,6 +62,9 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Ch06"/>
+			<item value="Ch05"/>
+			<item value="Ch04"/>
 			<item value="kr.co.ch03"/>
 			<item value="Ch02"/>
 			<item value="Ch01"/>
@@ -69,6 +72,9 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Ch06"/>
+			<item value="Ch05"/>
+			<item value="Ch04"/>
 			<item value="Ch03"/>
 			<item value="Ch02"/>
 			<item value="Ch01"/>
