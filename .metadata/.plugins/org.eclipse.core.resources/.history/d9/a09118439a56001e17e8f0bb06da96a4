@@ -1,5 +1,0 @@
-package ch03.sub3.advice;
-
-public class AfterAdvice {
-
-}
