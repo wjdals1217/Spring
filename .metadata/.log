@@ -6680,3 +6680,63 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:53:59.695
 !MESSAGE Boot project ADDED: Ch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:55:49.242
+!MESSAGE Classpath changed for project: Ch08
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:55:56.601
+!MESSAGE Classpath changed for project: Ch08
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:56:11.711
+!MESSAGE Classpath changed for project: Ch08
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:56:24.654
+!MESSAGE Classpath changed for project: Ch08
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:58:00.980
+!MESSAGE Classpath changed for project: Ch08
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:58:00.980
+!MESSAGE Boot project ADDED: Ch08
+
+!ENTRY org.eclipse.jface 2 0 2023-10-04 08:58:04.414
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-10-04 08:58:04.415
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.381
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.381
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.382
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.382
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.384
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-10-04 08:58:05.385
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-10-04 08:58:28.478
+!MESSAGE Classpath changed for project: Ch08
