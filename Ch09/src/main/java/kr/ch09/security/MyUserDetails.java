@@ -34,7 +34,10 @@ public class MyUserDetails implements UserDetails{
 		// 등급을 리턴해주는 메소드(USER, MANAGER, ADMIN)List로 리턴
 		// 계정이 갖는 권한 목록
 		List<GrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority(role));		
+		
+		// 반드시 접두어로 ROLE_ 입력해야 됨 그래야 hasRole(), hasAnyRole() 메서드가 처리됨
+		// 만약 ROLE_ 접두어를 안 쓰면 hasAuthority(), hasAnyAuthority() 메서드로 해야됨
+		authorities.add(new SimpleGrantedAuthority("ROLE_"+role));		
 		return authorities;
 	}
 

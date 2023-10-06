@@ -23,8 +23,8 @@ public class SecurityConfigration {
 				authorizeHttpRequests ->
 				authorizeHttpRequests
 					.requestMatchers("/").permitAll()
-					.requestMatchers("/admin/**").hasAuthority("ADMIN")
-					.requestMatchers("/manager/**").hasAnyAuthority("MANAGER", "ADMIN")
+					.requestMatchers("/admin/**").hasRole("ADMIN")
+					.requestMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
 					.requestMatchers("/user/**").permitAll()
 				);
 		
