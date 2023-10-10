@@ -32,7 +32,7 @@ public class SecurityConfigration {
 		//http.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN");
 		//http.authorizeRequests().requestMatchers("/user/").hasAnyRole("USER", "MANAGER", "ADMIN");
 		
-		// 사이트 위변조 방지 설정
+		// 사이트 위변조 방지 설정 해제
 		http.csrf(CsrfConfigurer::disable);
 		//http.csrf().disable();
 		
