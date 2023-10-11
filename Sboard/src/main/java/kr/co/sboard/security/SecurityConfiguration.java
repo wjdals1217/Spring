@@ -32,7 +32,7 @@ public class SecurityConfiguration {
 				.csrf(CsrfConfigurer::disable) // 메서드 참조 연산자로 람다식을 간결하게 표현
 				// 폼 로그인 설정
 				.formLogin(config -> config.loginPage("/user/login")
-						.defaultSuccessUrl("/list")
+						.defaultSuccessUrl("/")
 						.failureUrl("/user/login?success=100")
 						.usernameParameter("uid")
 						.passwordParameter("pass"))
