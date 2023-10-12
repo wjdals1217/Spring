@@ -1,5 +1,6 @@
 package kr.co.sboard.controller.user;
 
+import jakarta.servlet.http.HttpServletRequest;
 import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.entity.TermsEntity;
 import kr.co.sboard.entity.UserEntity;
@@ -26,7 +27,8 @@ public class UserController {
         return "/user/register";
     }
     @PostMapping("/user/register")
-    public String register(UserDTO dto){
+    public String register(HttpServletRequest request, UserDTO dto){
+        dto.setRegip(request.getRemoteAddr());
 
         userService.save(dto);
         return "redirect:/user/login";

@@ -1,6 +1,5 @@
 package kr.ch12.security;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -22,6 +21,7 @@ import lombok.ToString;
 @ToString
 public class MyUserDetails implements UserDetails{
 	
+	private static final long serialVersionUID = 1L;
 	private UserEntity user;
 
 	@Override

@@ -24,8 +24,8 @@ public class SecurityUserService implements UserDetailsService {
 
 		// 사용자 인증객체 생성(세션에 저장)
 		UserDetails userDetails = MyUserDetails.builder()
-				.user(user)
-				.build();
+												.user(user)
+												.build();
 
 		return userDetails;
 	}

@@ -28,6 +28,7 @@ public class UserService {
 
     public void save(UserDTO dto){
         // 비밀번호 암호화
+
         dto.setPass1(passwordEncoder.encode(dto.getPass1()));
         // DTO를 Entity로 변환
         UserEntity entity = dto.toEntity();

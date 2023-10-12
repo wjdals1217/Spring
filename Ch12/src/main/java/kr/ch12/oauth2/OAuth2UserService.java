@@ -1,5 +1,6 @@
 package kr.ch12.oauth2;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
 	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -54,6 +56,7 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 										.uid(provider+"_"+id)
 										.name(nickname)
 										.nickname(nickname)
+										.regDate(LocalDateTime.now())
 										.email(email)
 										.provider(provider)
 										.role("USER")

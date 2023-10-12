@@ -6,6 +6,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import kr.co.sboard.dto.UserDTO;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +18,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "User")
 public class UserEntity {
@@ -27,11 +33,13 @@ public class UserEntity {
     private String email;
     @Column(name = "hp", unique = true)
     private String hp;
+    @ColumnDefault("USER")
     private String role;
     private String zip;
     private String addr1;
     private String addr2;
     private String regip;
+    @CreationTimestamp
     private LocalDateTime regDate;
     private LocalDateTime leaveDate;
 
