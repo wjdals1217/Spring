@@ -2,18 +2,15 @@ package kr.co.sboard.controller.article;
 
 import jakarta.servlet.http.HttpServletRequest;
 import kr.co.sboard.dto.ArticleDTO;
-import kr.co.sboard.entity.ArticleEntity;
+import kr.co.sboard.dto.PageRequestDTO;
+import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.service.ArticleService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @Log4j2
 @Controller
@@ -21,18 +18,28 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    // 글목록 조회
     @GetMapping("/article/list")
-    public String list(Model model, String cate,@RequestParam(defaultValue = "1") int pg){
-        Page<ArticleEntity> pageArticle = articleService.findByParent(pg);
-        model.addAttribute("pageArticle", pageArticle);
+    public String list(Model model, PageRequestDTO pageRequestDTO){
+        PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
+        log.info("pageResponseDTO pg : " +pageResponseDTO.getPg());
+        log.info("pageResponseDTO size : " +pageResponseDTO.getSize());
+        log.info("pageResponseDTO total : " +pageResponseDTO.getTotal());
+        log.info("pageResponseDTO start : " +pageResponseDTO.getStart());
+        log.info("pageResponseDTO end : " +pageResponseDTO.getEnd());
+        log.info("pageResponseDTO prev : " +pageResponseDTO.isPrev());
+        log.info("pageResponseDTO next : " +pageResponseDTO.isNext());
+        model.addAttribute(pageResponseDTO);
         return "/article/list";
     }
-    @GetMapping("/article/register")
-    public String register(){
-        return "/article/register";
+    @GetMapping("/article/write")
+    public String write(PageRequestDTO pageRequestDTO){
+
+        // model.addAttribute(pageRequestDTO);
+        return "/article/write";
     }
 
-    @PostMapping("/article/register")
+    @PostMapping("/article/write")
     public String register(HttpServletRequest request, ArticleDTO dto){
 
         dto.setRegip(request.getRemoteAddr());
@@ -40,7 +47,7 @@ public class ArticleController {
         log.info(dto);
 
         articleService.save(dto);
-        return "redirect:/article/list";
+        return "redirect:/article/list?cate="+dto.getCate();
     }
 
 

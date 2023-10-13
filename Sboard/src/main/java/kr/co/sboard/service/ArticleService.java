@@ -3,11 +3,14 @@ package kr.co.sboard.service;
 import kr.co.sboard.dto.ArticleDTO;
 
 import kr.co.sboard.dto.FileDTO;
+import kr.co.sboard.dto.PageRequestDTO;
+import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.entity.ArticleEntity;
 import kr.co.sboard.repository.ArticleRepository;
 import kr.co.sboard.repository.FileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -29,12 +32,25 @@ public class ArticleService {
 
     private final ArticleRepository articleRepository;
     private final FileRepository fileRepository;
+    private final ModelMapper modelMapper; //따로 Bean 설정을 해주어야함
 
-    public Page<ArticleEntity> findByParent(int pg){
+    // 글목록 조회
+    public PageResponseDTO findByParentAndCate(PageRequestDTO pageRequestDTO){
 
-        Pageable pageable = PageRequest.of(pg-1, 10, Sort.Direction.DESC,"no");
+        Pageable pageable = pageRequestDTO.getPageable("no");
 
-         return articleRepository.findByParent(0, pageable);
+         Page<ArticleEntity> result = articleRepository.findByParentAndCate(0, pageRequestDTO.getCate(), pageable);
+
+         List<ArticleDTO> dotList = result.getContent()
+                                             .stream()
+                                             .map(entity ->modelMapper.map(entity,ArticleDTO.class))
+                                             .toList(); //10 개의 List
+         int totalElement = (int) result.getTotalElements(); //entity의 개수
+         return PageResponseDTO.builder()
+                 .pageRequestDTO(pageRequestDTO)
+                 .dtoList(dotList)
+                 .total(totalElement)
+                 .build();
     }
     
     // 글등록
@@ -44,11 +60,16 @@ public class ArticleService {
 
         // 파일업로드
         FileDTO fileDTO = fileUpload(dto);
-
+        
+        // 파일 DB에 추가
         if(fileDTO!= null){
             // 파일 등록
             fileDTO.setAno(savedEntity.getNo());
             fileRepository.save(fileDTO.toEntity());
+
+            int count = fileRepository.countByAno(savedEntity.getNo());
+            savedEntity.setFile(count);
+            articleRepository.save(savedEntity);
         }
     }
 

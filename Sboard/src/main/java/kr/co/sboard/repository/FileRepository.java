@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FileRepository extends JpaRepository<FileEntity, Integer> {
 
-    /*int countByAno(int ano);*/
+    int countByAno(int ano);
 }
