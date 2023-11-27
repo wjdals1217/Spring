@@ -12,3 +12,8 @@ DI(Dependency Injection) : 의존성 주입. Bean Factory, Annotation
 AOP(Aspect Oriented Programming) : 여러 객체에서 공통으로 사용하는 기능(로직)을 분리해서 재사용성을 높이는 프로그래밍 기법으로 관점 지향 프로그래밍 
 핵심적인 기능에서 부가적인 기능을 분리해서 Aspect라는 독특한 모듈 형태로 만들어 설계하고 개발하는 방법
 AOP와 OOP의 관계 : 관점 지향 프로그래밍과 객체 지향 프로그래밍. OOP 안에 AOP가 포함됨. 객체지향을 좀 더 완벽하게 해주는 프로그래밍 기법
+
+Spring은 Proxy(대리자) 기반 AOP를 지원. Proxy는 Target 객체에 대한 호출을 가로챈 다음 Advice의 부가 기능 로직을 수행하고 난 후 Target의 핵심 기능 로직을 호출
+
+- AOP 주요 용어
+![Untitled](https://github.com/wjdals1217/Spring/assets/136421876/9d71a15b-2542-43ab-b129-305e337fe508)
