@@ -68,8 +68,8 @@ Spring은 Proxy(대리자) 기반 AOP를 지원. Proxy는 Target 객체에 대�
   Entity : Database Table에 대응하는 Java 클래스로 @Entity 선언으로 Entity 객체 생성
   Entity Manager : Entity를 관히하는 객체로 Entity를 영속성 컨텍스트 1차 캐시에 저장(영속화)하고 접근 제어
 
-|구분분|문법|
-|---|---|
+|구분|문법|
+|-----|------|
 |Distinct|findDistinctByLastnameAndFirstname|
 |And|findByLastnameAndFirstname|
 |Or|findByLastnameOrFirstname|
@@ -115,7 +115,7 @@ Spring은 Proxy(대리자) 기반 AOP를 지원. Proxy는 Target 객체에 대�
 
 
 |HTTP Method|CRUD|
-|---|---|
+|-----|-----|
 |POST|CREATE(INSERT)|
 |GET|READ(SELECT)|
 |PUT|UPDATE|
