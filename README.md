@@ -67,6 +67,8 @@ Spring은 Proxy(대리자) 기반 AOP를 지원. Proxy는 Target 객체에 대�
 - Entity와 Entity Manager
   Entity : Database Table에 대응하는 Java 클래스로 @Entity 선언으로 Entity 객체 생성
   Entity Manager : Entity를 관히하는 객체로 Entity를 영속성 컨텍스트 1차 캐시에 저장(영속화)하고 접근 제어
+
+|구분분|문법|
 |---|---|
 |Distinct|findDistinctByLastnameAndFirstname|
 |And|findByLastnameAndFirstname|
@@ -110,6 +112,8 @@ Spring은 Proxy(대리자) 기반 AOP를 지원. Proxy는 Target 객체에 대�
 - REST API
   : REST(Representational State Transfer)는 네트워크에서 클라이언트와 서버 사이의 통신을 구현하는 방법에 대한 이론으로 하나의 자원은 여러 형태의 Representation(json, xml, text, rss 등)으로 전달할 수 있다는 개념
   REST API는 URI + Method를 의미하고 URI를 통해 제어할 자원을 명시하고, Method를 통해 해당 Resource를 제어하는 명령을 내리는 방식의 아키텍처를 의미
+
+
 |HTTP Method|CRUD|
 |---|---|
 |POST|CREATE(INSERT)|
